@@ -61,5 +61,12 @@ describe "Card" do
       expect(hearts.same_color clubs).to be_falsey
       expect(hearts.same_color spades).to be_falsey
     end
+
+    it "properly matches suites" do
+      two_of_hearts = Card.new(3, 1)
+
+      expect(hearts.same_suite two_of_hearts).to eq true
+      expect(hearts.same_suite spades).to eq false
+    end
   end
 end

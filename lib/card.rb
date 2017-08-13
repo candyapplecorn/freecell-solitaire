@@ -16,6 +16,10 @@ class Card
            [other.suite, @suite].all? {|s| SUITES.slice(2, 2).include?(s) }
   end
 
+  def same_suite(other)
+    other.suite == @suite
+  end
+
   def >(other)
     is_after?(other)
   end
